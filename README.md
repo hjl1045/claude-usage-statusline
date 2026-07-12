@@ -5,14 +5,17 @@ A drop-in [status line](https://code.claude.com/docs/en/statusline) for **Claude
 - **how full the current session's context window is**, and
 - **your Anthropic plan / rate-limit usage** — the same `5h` / weekly / per-model bars the `/usage` command shows, right in the status line so you never have to run `/usage`.
 
-```
-my-project  main | Opus 4.8 | ██░░░░░░░░ 20% · 200k | 5h 6% · wk 5% · Fable 5%
-└─ dir ──┘ └branch┘ └model┘ └─── context window ───┘ └──── plan usage ─────┘
-```
+![claude-usage-statusline showing the context bar and 5h / weekly / per-model plan usage in green, yellow, and red states](assets/statusline.svg)
 
-Everything after `|` is color-coded green → yellow → red as it fills. On a narrow terminal the segments flow onto multiple rows; on a wide one it's a single line.
+<sub>Format: `<dir> [branch] | <model> | <context bar> <pct>% · <tokens> | <5h>% · <weekly>% · <per-model>%`. Everything after each `|` is color-coded green → yellow → red as it fills.</sub>
+
+**What makes it different:** most Claude Code statusline tools show session *cost*. This is the only one that surfaces the **per-model weekly rate-limit bar** — the temporary promo-model limit (e.g. `Fable`) that's easiest to blow through and hardest to keep an eye on — right next to an honest context-window gauge.
 
 Pure Python 3 standard library plus `curl` — **no pip installs, no dependencies**. It's additive: two files and one settings key. Your other Claude Code settings and hooks are never touched.
+
+**Responsive:** on a narrow terminal the segments flow onto multiple rows instead of truncating; on a wide one it's a single line.
+
+![the same status line on a narrow terminal, wrapped onto two rows](assets/statusline-responsive.svg)
 
 ---
 

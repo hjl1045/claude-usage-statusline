@@ -1,0 +1,17 @@
+# Runtime artifacts written next to your Claude config, never in the repo — but
+# ignored here too in case someone runs the script from inside the checkout.
+.usage-cache.json
+.usage-cache.json.*
+.credentials.json
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Editor / OS
+.DS_Store
+*.swp
+.idea/
+.vscode/

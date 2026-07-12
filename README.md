@@ -5,9 +5,9 @@ A drop-in [status line](https://code.claude.com/docs/en/statusline) for **Claude
 - **how full the current session's context window is**, and
 - **your Anthropic plan / rate-limit usage** — the same `5h` / weekly / per-model bars the `/usage` command shows, right in the status line so you never have to run `/usage`.
 
-![claude-usage-statusline showing the context bar and 5h / weekly / per-model plan usage in green, yellow, and red states](assets/statusline.svg)
+![claude-usage-statusline: one status line showing the context bar plus 5h / weekly / per-model plan usage](assets/statusline.svg)
 
-<sub>Format: `<dir> [branch] | <model> | <context bar> <pct>% · <tokens> | <5h>% · <weekly>% · <per-model>%`. Everything after each `|` is color-coded green → yellow → red as it fills.</sub>
+<sub>Format: `<dir> [branch] | <model> | <context bar> <pct>% · <tokens> | <5h>% · <weekly>% · <per-model>%`. It's a single line for the current session; every bar and percent is color-coded green → yellow → red as it fills.</sub>
 
 **What makes it different:** most Claude Code statusline tools show session *cost*. This is the only one that surfaces the **per-model weekly rate-limit bar** — the temporary promo-model limit (e.g. `Fable`) that's easiest to blow through and hardest to keep an eye on — right next to an honest context-window gauge.
 
